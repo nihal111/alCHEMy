@@ -28,7 +28,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="D:\alCHEMy\alCHEMy\alCHEMy\alCHEMy.Windows\bin\Debug\alCHEMy.Windows.exe">
       <PackagePath>alCHEMy.Windows.exe</PackagePath>
-      <Modified>2016-01-09T13:10:14.125</Modified>
+      <Modified>2016-01-09T20:45:35.405</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\alCHEMy\alCHEMy\alCHEMy\alCHEMy.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -56,15 +56,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\alCHEMy\alCHEMy\alCHEMy\alCHEMy.Windows\bin\Debug\alCHEMy.Windows.xr.xml">
       <PackagePath>alCHEMy.Windows.xr.xml</PackagePath>
-      <Modified>2016-01-09T13:10:13.835</Modified>
+      <Modified>2016-01-09T15:58:13.868</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\alCHEMy\alCHEMy\alCHEMy\alCHEMy.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2016-01-09T13:05:54.763</Modified>
+      <Modified>2016-01-09T19:13:49.579</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\alCHEMy\alCHEMy\alCHEMy\alCHEMy.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2016-01-09T13:10:13.888</Modified>
+      <Modified>2016-01-09T20:45:35.162</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\alCHEMy\alCHEMy\alCHEMy\alCHEMy.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
