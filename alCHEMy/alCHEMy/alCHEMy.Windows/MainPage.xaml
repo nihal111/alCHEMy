@@ -14,9 +14,32 @@
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="beaker.png"/>
         </Grid.Background>
-        <Button x:Name="remove" Content="-" HorizontalAlignment="Left" Margin="601,26,0,0" VerticalAlignment="Top" Background="#FFF00000" Width="82" Height="82" FontSize="32" Click="remove_Click"/>
-        <ComboBox x:Name="add" HorizontalAlignment="Left" Margin="80,47,0,0" VerticalAlignment="Top" Width="120" DropDownOpened="add_DropDownOpened" Background="#CC17F000"/>
-        <Button x:Name="addbtn" Content="ADD" HorizontalAlignment="Left" Margin="215,44,0,0" VerticalAlignment="Top" Background="#FF18FF00" Click="addbtn_Click"/>
+        <Button x:Name="remove" Content="-" HorizontalAlignment="Left" Margin="586,26,0,0" VerticalAlignment="Top" Background="#FFF00000" Width="82" Height="82" FontSize="32" Click="remove_Click"/>
+        <ComboBox x:Name="add" HorizontalAlignment="Left" Margin="306,47,0,0" VerticalAlignment="Top" Width="120" DropDownOpened="add_DropDownOpened" Background="#CC17F000"/>
+        <Button x:Name="addbtn" Content="ADD" HorizontalAlignment="Left" Margin="441,44,0,0" VerticalAlignment="Top" Background="#FF18FF00" Click="addbtn_Click"/>
+        <TextBox x:Name="centerbox" HorizontalAlignment="Left" Margin="383,225,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" FontSize="24" IsReadOnly="True" Height="44"/>
+        <Button x:Name="moveleft" Content="&lt;-" HorizontalAlignment="Left" Margin="292,210,0,0" VerticalAlignment="Top" Width="70" Height="70" Background="#FF72E3EA" FontSize="32" Click="moveleft_Click"/>
+        <TextBox x:Name="r1" HorizontalAlignment="Left" Margin="42,376,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="r1_RightTapped"/>
+        <TextBox x:Name="r2" HorizontalAlignment="Left" Margin="42,338,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="r2_RightTapped"/>
+        <TextBox x:Name="r3" HorizontalAlignment="Left" Margin="42,300,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="r3_RightTapped"/>
+        <TextBox x:Name="r4" HorizontalAlignment="Left" Margin="42,259,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="r4_RightTapped"/>
+        <TextBox x:Name="r5" HorizontalAlignment="Left" Margin="42,220,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="r5_RightTapped"/>
+        <TextBox x:Name="r6" HorizontalAlignment="Left" Margin="42,182,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="r6_RightTapped"/>
+        <Button x:Name="react" Content="REACT" HorizontalAlignment="Left" Margin="292,330,0,0" VerticalAlignment="Top" Width="200" Height="70" FontSize="13.333" FontWeight="Bold" Click="react_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF1F7393" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="p1" HorizontalAlignment="Left" Margin="509,376,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="p1_RightTapped"/>
+        <TextBox x:Name="p2" HorizontalAlignment="Left" Margin="509,338,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="p2_RightTapped"/>
+        <TextBox x:Name="p3" HorizontalAlignment="Left" Margin="509,300,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="p3_RightTapped"/>
+        <TextBox x:Name="p4" HorizontalAlignment="Left" Margin="509,259,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="p4_RightTapped"/>
+        <TextBox x:Name="p5" HorizontalAlignment="Left" Margin="509,220,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="p5_RightTapped"/>
+        <TextBox x:Name="p6" HorizontalAlignment="Left" Margin="509,182,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="32" Width="230" Background="#FFD44D4D" IsReadOnly="True" RightTapped="p6_RightTapped"/>
+        <Button x:Name="remove_Copy" Content="-" HorizontalAlignment="Left" Margin="117,26,0,0" VerticalAlignment="Top" Background="#FFF00000" Width="82" Height="82" FontSize="32" Click="remove_Click"/>
 
     </Grid>
 </Page>
