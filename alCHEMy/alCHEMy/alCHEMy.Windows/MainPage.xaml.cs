@@ -26,12 +26,53 @@ namespace alCHEMy
     public sealed partial class MainPage : Page
     {
         
-        List<string> compounds = new List<string>() { "HCl","NaOH","NaCl","H2O","KOH","H2SO4"
-                            ,"Ca(OH)2","NaHCO3","NaOCl","CaO","CaCO3"
-                            ,"CO2","O2","KMNO4","FeSO4","Fe","Cu","AgNO3"
-                            ,"Ag","Mg","ZnSO4","Zn","Fe2O3","KI","Cl2"
-                            ,"I2","KCl","Cu(NO3)2","CuSO4","MgSO4","Na"
-                            ,"H2","Al","Al2O3"
+        List<string> compounds = new List<string>() {
+                            "HCl",
+                            "NaOH",
+                            "NaCl",
+                            "H2O",
+                            "KOH",
+                            "H2SO4",
+                            "Ca(OH)2",
+                            "NaHCO3",
+                            "C",
+                            "CaO",
+                            "CaCO3",
+                            "CO2",
+                            "O2",
+                            "Br2",
+                            "FeSO4",
+                            "Fe",
+                            "Cu",
+                            "AgNO3",
+                            "Ag",
+                            "Mg",
+                            "ZnSO4",
+                            "Zn",
+                            "Fe2O3",
+                            "KI",
+                            "Cl2",
+                            "I2",
+                            "KCl",
+                            "Cu(NO3)2",
+                            "CuSO4",
+                            "MgSO4",
+                            "Na",
+                            "H2",
+                            "Al",
+                            "Al2O3",
+                            "Na2SO4",
+                            "Heat",
+                            "Na2CO3",
+                            "KI3",
+                            "H2CO3",
+                            "H2S",
+                            "S",
+                            "K2SO4",
+                            "CaSO4",
+                            "Fe2(SO4)3",
+                            "HI",
+                            "Al2(SO4)3"
                             };
         List<TextBox> textboxes = new List<TextBox>();
         int reactantcount = 0;
@@ -40,12 +81,54 @@ namespace alCHEMy
         int[] reactants = new int[7];
         int[] products = new int[7];
 
-        string[] elements = { "HCl","NaOH","NaCl","H2O","KOH","H2SO4"
-                            ,"Ca(OH)2","NaHCO3","NaOCl","CaO","CaCO3"
-                            ,"CO2","O2","KMNO4","FeSO4","Fe","Cu","AgNO3"
-                            ,"Ag","Mg","ZnSO4","Zn","Fe2O3","KI","Cl2"
-                            ,"I2","KCl","Cu(NO3)2","CuSO4","MgSO4","Na"
-                            ,"H2","Al","Al2O3"
+        string[,] elements = new string[,]{
+                            {" HCl","white "},
+                            {"NaOH","white"},
+                            {"NaCl","white"},
+                            {"H2O","white"},
+                            {"KOH","white"},
+                            {"H2SO4","white"},
+                            {"Ca(OH)2","white"},
+                            {"NaHCO3","white"},
+                            {"C","grey"},
+                            {"CaO","white"},
+                            {"CaCO3","white"},
+                            {"CO2","white"},
+                            {"O2","white"},
+                            {"Br2","Orange"},
+                            {"FeSO4","Green"},
+                            {"Fe","grey"},
+                            {"Cu","orange"},
+                            {"AgNO3","white"},
+                            {"Ag","silver"},
+                            {"Mg","grey"},
+                            {"ZnSO4","white"},
+                            {"Zn","grey"},
+                            {"Fe2O3","red"},
+                            {"KI","white"},
+                            {"Cl2","green"},
+                            {"I2","violet"},
+                            {"KCl","white"},
+                            {"Cu(NO3)2","blue"},
+                            {"CuSO4","blue"},
+                            {"MgSO4","white"},
+                            {"Na","silver"},
+                            {"H2","white"},
+                            {"Al","silver"},
+                            {"Al2O3","white"},
+                            {"Na2SO4","white"},
+                            {"Heat","red"},
+                            {"Na2CO3","white"},
+                            {"KI3","brown"},
+                            {"H2CO3","white"},
+                            {"H2S","white"},
+                            {"S","yellow"},
+                            {"K2SO4","white"},
+                            {"CaSO4","white"},
+                            {"Fe2(SO4)3","yellow"},
+                            {"HI","white"},
+                            {"Al2(SO4)3","white"}
+
                             };
         string[,] reactions= new string[,]{
                                 { "100101","102103" },
@@ -126,8 +209,12 @@ namespace alCHEMy
                 centerbox.Text = "Full!";
             if (reactantcount < 6 && centerbox.Text == "Full!")
                 centerbox.Text = "Add Reactant!";
-            if ( centerbox.Visibility==Visibility.Visible && centerbox.Text!= "Add Reactant!" && centerbox.Text!="Full!" && reactantcount<6)
-            { 
+
+            if ((r1.Visibility == Visibility.Visible && r1.Text == centerbox.Text) || (r2.Visibility == Visibility.Visible && r2.Text == centerbox.Text) || (r3.Visibility == Visibility.Visible && r3.Text == centerbox.Text) || (r3.Visibility == Visibility.Visible && r3.Text == centerbox.Text) || (r4.Visibility == Visibility.Visible && r4.Text == centerbox.Text) || (r5.Visibility == Visibility.Visible && r5.Text == centerbox.Text) || (r6.Visibility == Visibility.Visible && r6.Text == centerbox.Text))
+                centerbox.Text = "Already Added!";
+
+            else if (centerbox.Visibility == Visibility.Visible && centerbox.Text != "Add Reactant!" && centerbox.Text != "Already Added!" && centerbox.Text != "Full!" && reactantcount < 6)
+            {
                 for (int i = 1; i < 7; i++)
                 {
                     if (arr[i] == 0)
@@ -137,6 +224,7 @@ namespace alCHEMy
                             case 1:
                                 r1.Visibility = Visibility.Visible;
                                 r1.Text = centerbox.Text;
+                                r1.Background = Brush.Red;
                                 centerbox.Visibility = Visibility.Collapsed;
                                 arr[i] = 1;
                                 break;
@@ -172,21 +260,21 @@ namespace alCHEMy
                                 break;
                         }
 
-                        
+
                         break;
                     }
                 }
                 reactantcount++;
-               
-                
+
+
 
             }
-            else if (centerbox.Visibility==Visibility.Collapsed)
+            else if (centerbox.Visibility == Visibility.Collapsed)
             {
                 centerbox.Visibility = Visibility.Visible;
                 centerbox.Text = "Add Reactant!";
             }
-            else if (reactantcount==6)
+            else if (reactantcount == 6)
             {
                 centerbox.Visibility = Visibility.Visible;
                 centerbox.Text = "Full!";
@@ -306,7 +394,7 @@ namespace alCHEMy
                     word = word + input[i];
                 }
                 else {
-                    int pos = Array.IndexOf(elements, word);
+                    int pos = compounds.IndexOf(word);
                     if (pos > -1)
                     {
                         pos = pos + 100;
@@ -351,47 +439,55 @@ namespace alCHEMy
 
             if (output != "" && flag==1)
             {
-                
+
 
                 while (output.Length > 0)
                 {
-                    products[productcount++] = Int32.Parse(output.Substring(0, 3));
-                    switch (productcount)
+                    products[productcount] = Int32.Parse(output.Substring(0, 3));
+                    if (!((p1.Visibility == Visibility.Visible && p1.Text == elements[products[productcount] - 100,0]) || (p2.Visibility == Visibility.Visible && p2.Text == elements[products[productcount] - 100,0]) || (p3.Visibility == Visibility.Visible && p3.Text == elements[products[productcount] - 100,0]) || (p3.Visibility == Visibility.Visible && p3.Text == elements[products[productcount] - 100,0]) || (p4.Visibility == Visibility.Visible && p4.Text == elements[products[productcount] - 100,0]) || (p5.Visibility == Visibility.Visible && p5.Text == elements[products[productcount] - 100,0]) || (p6.Visibility == Visibility.Visible && p6.Text == elements[products[productcount] - 100,0])))
                     {
-                        case 1:
-                            p1.Visibility = Visibility.Visible;
-                            p1.Text = elements[products[productcount - 1]-100];
-                            break;
-                        case 2:
-                            p2.Visibility = Visibility.Visible;
-                            p2.Text = elements[products[productcount - 1] - 100];
-                            centerbox.Visibility = Visibility.Collapsed;
-                            break;
-                        case 3:
-                            p3.Visibility = Visibility.Visible;
-                            p3.Text = elements[products[productcount - 1] - 100];
-                            centerbox.Visibility = Visibility.Collapsed;
-                            break;
-                        case 4:
-                            p4.Visibility = Visibility.Visible;
-                            p4.Text = elements[products[productcount - 1] - 100];
-                            centerbox.Visibility = Visibility.Collapsed;
-                            break;
-                        case 5:
-                            p5.Visibility = Visibility.Visible;
-                            p5.Text = elements[products[productcount - 1] - 100];
-                            centerbox.Visibility = Visibility.Collapsed;
-                            break;
-                        case 6:
-                            p6.Visibility = Visibility.Visible;
-                            p6.Text = elements[products[productcount - 1] - 100];
-                            centerbox.Visibility = Visibility.Collapsed;
-                            break;
+
+                        productcount++;
+                        switch (productcount)
+                        {
+                            case 1:
+                                p1.Visibility = Visibility.Visible;
+                                p1.Text = elements[products[productcount - 1] - 100,0];
+                                break;
+                            case 2:
+                                p2.Visibility = Visibility.Visible;
+                                p2.Text = elements[products[productcount - 1] - 100,0];
+                                centerbox.Visibility = Visibility.Collapsed;
+                                break;
+                            case 3:
+                                p3.Visibility = Visibility.Visible;
+                                p3.Text = elements[products[productcount - 1] - 100,0];
+                                centerbox.Visibility = Visibility.Collapsed;
+                                break;
+                            case 4:
+                                p4.Visibility = Visibility.Visible;
+                                p4.Text = elements[products[productcount - 1] - 100,0];
+                                centerbox.Visibility = Visibility.Collapsed;
+                                break;
+                            case 5:
+                                p5.Visibility = Visibility.Visible;
+                                p5.Text = elements[products[productcount - 1] - 100,0];
+                                centerbox.Visibility = Visibility.Collapsed;
+                                break;
+                            case 6:
+                                p6.Visibility = Visibility.Visible;
+                                p6.Text = elements[products[productcount - 1] - 100,0];
+                                centerbox.Visibility = Visibility.Collapsed;
+                                break;
+                        }
+                       
                     }
+
                     output = output.Substring(3, output.Length - 3);
                 }
 
             }
+
             for (i = 0; i < 7; i++)
             {
                 reactants[i] = 0;
@@ -399,8 +495,15 @@ namespace alCHEMy
             flag = 0;
         }
 
-
-
-
+        private void remove_reactants_Click(object sender, RoutedEventArgs e)
+        {   
+            r1.Visibility = Visibility.Collapsed;
+            r2.Visibility = Visibility.Collapsed;
+            r3.Visibility = Visibility.Collapsed;
+            r4.Visibility = Visibility.Collapsed;
+            r5.Visibility = Visibility.Collapsed;
+            r6.Visibility = Visibility.Collapsed;
+            reactantcount = arr[0]=arr[1]=arr[2]=arr[3]=arr[4]=arr[5]=arr[6]=0;
+        }
     }
 }
