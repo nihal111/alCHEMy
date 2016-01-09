@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity{
 
     TwoWayView listView;
     Context context;
+    String item;
+    TextView tv;
+    int no_of_reactants=0;
     String[] compounds = new String[]{"HCl", "NaOH", "NaCl", "H2O", "KOH", "H2SO4"
             , "Ca(OH)2", "NaHCO3", "NaOCl", "CaO", "CaCO3"
             , "CO2", "O2", "KMnO4", "FeSO4", "Fe", "Cu", "AgNO3"
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         context=this;
         setContentView(R.layout.activity_main);
+        final Button compound = (Button)findViewById(R.id.compound);
+        compound.setEnabled(false);
         ArrayAdapter<String> compoundAdapter = new ArrayAdapter<>(this, R.layout.compound_list_item, compounds);
         listView = (TwoWayView)findViewById(R.id.lvItems);
         listView.setAdapter(compoundAdapter);
@@ -47,16 +52,65 @@ public class MainActivity extends AppCompatActivity{
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayout);
-                String item = ((TextView) view).getText().toString();
-                Button added = new Button(context);
-                added.setText(item);
-                rl.addView(added);
-                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) added.getLayoutParams();
-                params.addRule(RelativeLayout.CENTER_IN_PARENT);
-                added.setLayoutParams(params);
+                item = ((TextView) view).getText().toString();
+                compound.setEnabled(true);
+                compound.setVisibility(View.VISIBLE);
+                compound.setText(item);
+                compound.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) { //TODO:loop through all to find lowest unoccupied index
+                        switch (no_of_reactants)
+                        {
+                            case 0:
+                                tv = (TextView)findViewById(R.id.textView1);
+                                tv.setText(item);
+                                tv.setVisibility(View.VISIBLE);
+                                no_of_reactants+=1;
+                                break;
+                            case 1:
+                                tv = (TextView)findViewById(R.id.textView2);
+                                tv.setText(item);
+                                tv.setVisibility(View.VISIBLE);
+                                no_of_reactants+=1;
+                                break;
+                            case 2:
+                                TextView tv = (TextView)findViewById(R.id.textView3);
+                                tv.setText(item);
+                                tv.setVisibility(View.VISIBLE);
+                                no_of_reactants+=1;
+                                break;
+                            case 3:
+                                tv = (TextView)findViewById(R.id.textView4);
+                                tv.setText(item);
+                                tv.setVisibility(View.VISIBLE);
+                                no_of_reactants+=1;
+                                break;
+                            case 4:
+                                tv = (TextView)findViewById(R.id.textView5);
+                                tv.setText(item);
+                                tv.setVisibility(View.VISIBLE);
+                                no_of_reactants+=1;
+                                break;
+                            case 5:
+                                tv = (TextView)findViewById(R.id.textView6);
+                                tv.setText(item);
+                                tv.setVisibility(View.VISIBLE);
+                                no_of_reactants+=1;
+                                TextView full = (TextView)findViewById(R.id.fulltext);
+                                full.setVisibility(View.VISIBLE);
+                                break;
+                        }
+                    }
+                });
             }
         });
+
+    }
+
+    public void removeFromBeaker(View v)
+    {
+        v.setVisibility(View.INVISIBLE);
+        no_of_reactants-=1;
     }
 
     @Override
