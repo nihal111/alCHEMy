@@ -28,7 +28,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="D:\alCHEMy\alCHEMy\alCHEMy\alCHEMy.Windows\bin\Debug\alCHEMy.Windows.exe">
       <PackagePath>alCHEMy.Windows.exe</PackagePath>
-      <Modified>2016-01-09T22:43:05.210</Modified>
+      <Modified>2016-01-10T00:04:24.392</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\alCHEMy\alCHEMy\alCHEMy\alCHEMy.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>

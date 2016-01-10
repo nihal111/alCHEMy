@@ -82,7 +82,7 @@ namespace alCHEMy
         int[] products = new int[7];
 
         string[,] elements = new string[,]{
-                            {" HCl","white "},
+                            {"HCl","white"},
                             {"NaOH","white"},
                             {"NaCl","white"},
                             {"H2O","white"},
@@ -95,8 +95,8 @@ namespace alCHEMy
                             {"CaCO3","white"},
                             {"CO2","white"},
                             {"O2","white"},
-                            {"Br2","Orange"},
-                            {"FeSO4","Green"},
+                            {"Br2","orange"},
+                            {"FeSO4","green"},
                             {"Fe","grey"},
                             {"Cu","orange"},
                             {"AgNO3","white"},
@@ -135,11 +135,25 @@ namespace alCHEMy
                                 {"116117","114116" },
                                 {"115128","114116" }
                             };
-        
+        string[] colornames = { "white", "grey", "orange", "green", "red", "violet", "blue", "brown", "yellow", "silver" };
+        int[,] colors = new int[,]
+                            {
+                                {255,255,255,255 },
+                                {255,128,138,135 },
+                                {255,255,165,0 },
+                                {255,0,255,0 },
+                                {255,255,0,0 },
+                                {255,128,0,128 },
+                                {255,0,0,255 },
+                                {255,139,69,19 },
+                                {255,255,255,0 },
+                                {255,192,192,192 },
+                            };
 
         string word = "";
         string input = "";
         int flag = 0;
+
 
         public MainPage()
         {
@@ -203,6 +217,15 @@ namespace alCHEMy
 
         }
 
+        private SolidColorBrush findcolor(string compoundname)
+        {
+            int pos = compounds.IndexOf(compoundname);
+            string colorname = elements[pos, 1];
+            pos = Array.IndexOf(colornames, colorname);
+            SolidColorBrush background= new SolidColorBrush(Windows.UI.Color.FromArgb((byte) colors[pos,0], (byte)colors[pos, 1], (byte)colors[pos, 2], (byte)colors[pos, 3]));
+            return background;
+        }
+
         private void moveleft_Click(object sender, RoutedEventArgs e)
         {
             if (reactantcount >= 6)
@@ -224,7 +247,7 @@ namespace alCHEMy
                             case 1:
                                 r1.Visibility = Visibility.Visible;
                                 r1.Text = centerbox.Text;
-                                r1.Background = Brush.Red;
+                                r1.Background = findcolor(r1.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 arr[i] = 1;
                                 break;
@@ -232,30 +255,35 @@ namespace alCHEMy
                                 r2.Visibility = Visibility.Visible;
                                 r2.Text = centerbox.Text;
                                 arr[i] = 1;
+                                r2.Background = findcolor(r2.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 3:
                                 r3.Visibility = Visibility.Visible;
                                 r3.Text = centerbox.Text;
                                 arr[i] = 1;
+                                r3.Background = findcolor(r3.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 4:
                                 r4.Visibility = Visibility.Visible;
                                 r4.Text = centerbox.Text;
                                 arr[i] = 1;
+                                r4.Background = findcolor(r4.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 5:
                                 r5.Visibility = Visibility.Visible;
                                 r5.Text = centerbox.Text;
                                 arr[i] = 1;
+                                r5.Background = findcolor(r5.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 6:
                                 r6.Visibility = Visibility.Visible;
                                 r6.Text = centerbox.Text;
                                 arr[i] = 1;
+                                r6.Background = findcolor(r6.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                         }
@@ -453,30 +481,37 @@ namespace alCHEMy
                             case 1:
                                 p1.Visibility = Visibility.Visible;
                                 p1.Text = elements[products[productcount - 1] - 100,0];
+                                p1.Background = findcolor(p1.Text);
+                                centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 2:
                                 p2.Visibility = Visibility.Visible;
                                 p2.Text = elements[products[productcount - 1] - 100,0];
+                                p2.Background = findcolor(p2.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 3:
                                 p3.Visibility = Visibility.Visible;
                                 p3.Text = elements[products[productcount - 1] - 100,0];
+                                p3.Background = findcolor(p3.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 4:
                                 p4.Visibility = Visibility.Visible;
                                 p4.Text = elements[products[productcount - 1] - 100,0];
+                                p4.Background = findcolor(p4.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 5:
                                 p5.Visibility = Visibility.Visible;
                                 p5.Text = elements[products[productcount - 1] - 100,0];
+                                p5.Background = findcolor(p5.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                             case 6:
                                 p6.Visibility = Visibility.Visible;
                                 p6.Text = elements[products[productcount - 1] - 100,0];
+                                p6.Background = findcolor(p6.Text);
                                 centerbox.Visibility = Visibility.Collapsed;
                                 break;
                         }
